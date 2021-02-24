@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aplikacija za pozdrave</string>
+    <string name="greet">Pozdravi</string>
+    <string name="name_hint">Unesite ime</string>
+    <string name="greet_message">Pozdrav %1$s</string>
+</resources>

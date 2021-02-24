@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Апликација за поздраве</string>
+    <string name="greet">Поздрави</string>
+    <string name="name_hint">Унесите име</string>
+    <string name="greet_message">Здраво %1$s</string>
+</resources>
