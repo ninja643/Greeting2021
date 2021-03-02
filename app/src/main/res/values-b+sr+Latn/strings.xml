@@ -4,4 +4,5 @@
     <string name="greet">Pozdravi</string>
     <string name="name_hint">Unesite ime</string>
     <string name="greet_message">Pozdrav %1$s</string>
+    <string name="show_details_button">Prikaži detalje</string>
 </resources>

@@ -4,4 +4,5 @@
     <string name="greet">Поздрави</string>
     <string name="name_hint">Унесите име</string>
     <string name="greet_message">Здраво %1$s</string>
+    <string name="show_details_button">Прикажи детаље</string>
 </resources>

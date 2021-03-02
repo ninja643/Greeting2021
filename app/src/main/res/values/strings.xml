@@ -3,4 +3,9 @@
     <string name="greet">Greet</string>
     <string name="name_hint">Please enter your name</string>
     <string name="greet_message">Hello %1$s!</string>
+    <string name="show_details_button">Show details</string>
+    <string name="hint_first_name">First name</string>
+    <string name="hint_last_name">Last name</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
 </resources>
