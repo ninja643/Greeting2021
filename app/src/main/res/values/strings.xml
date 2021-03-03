@@ -8,4 +8,12 @@
     <string name="hint_last_name">Last name</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="show_dialog">Show dialog</string>
+    <string name="dialog_title">Delete some data</string>
+    <string name="dialog_message">Are you sure?</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_neutral">Cancel</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
 </resources>

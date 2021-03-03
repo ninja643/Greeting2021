@@ -72,8 +72,63 @@
         android:layout_marginRight="16dp"
         android:onClick="showDetails"
         android:text="@string/show_details_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelGreet" />
+
+    <Button
+        android:id="@+id/showDialogButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@id/showDetailsButton"
+        android:text="@string/show_dialog"
+        android:onClick="showDialog"
+        />
+
+    <Button
+        android:id="@+id/showDialogListButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@id/showDialogButton"
+        android:text="List"
+        android:onClick="showDialogList"
+        />
+    <Button
+        android:id="@+id/showSingleChoiceButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@id/showDialogListButton"
+        android:text="Single choice"
+        android:onClick="showDialogSingleChoice"
+        />
+    <Button
+        android:id="@+id/showMultiChoiceButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@id/showSingleChoiceButton"
+        android:text="Multi choice"
+        android:onClick="showDialogMultiChoice"
+        />
+    <Button
+        android:id="@+id/showDialogCustomButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@id/showMultiChoiceButton"
+        android:text="Custom"
+        android:onClick="showDialogCustom"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

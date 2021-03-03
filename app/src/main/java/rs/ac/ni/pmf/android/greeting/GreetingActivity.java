@@ -1,5 +1,9 @@
 package rs.ac.ni.pmf.android.greeting;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,15 +11,17 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import com.google.android.material.snackbar.Snackbar;
 
-public class GreetingActivity extends AppCompatActivity
+public class GreetingActivity extends AppCompatActivity implements MyDialog.MyDialogClickListener, CustomDialog.CustomDialogClickListener
 {
 	private static final String TAG = "GREETING_TAG";
 
@@ -139,6 +145,7 @@ public class GreetingActivity extends AppCompatActivity
 	@Override
 	protected void onActivityResult(final int requestCode, final int resultCode, @Nullable final Intent data)
 	{
+		Log.d(TAG, "Result code: " + resultCode);
 		switch (requestCode)
 		{
 			case REQUEST_DETAILS:
@@ -172,7 +179,11 @@ public class GreetingActivity extends AppCompatActivity
 
 	private void showSnackbar()
 	{
-		Snackbar.make(findViewById(R.id.greeting_activity_body), "Hello", Snackbar.LENGTH_LONG)
+		final View layout = findViewById(R.id.greeting_activity_body);
+
+		Log.i(TAG, layout.toString());
+
+		Snackbar.make(layout, "Hello", Snackbar.LENGTH_LONG)
 				.setAction("OK", v -> showToast())
 				.show();
 	}
@@ -193,5 +204,64 @@ public class GreetingActivity extends AppCompatActivity
 		toast.setView(toastView);
 
 		toast.show();
+	}
+
+	public void showDialog(View view)
+	{
+		final MyDialog dialog = new MyDialog();
+		dialog.show(getSupportFragmentManager(), "MY_DIALOG");
+	}
+
+	@Override
+	public void onYes(final MyDialog dialog)
+	{
+		Log.i(TAG, "YES clicked, value: " + dialog.getValue());
+	}
+
+	@Override
+	public void onNo(final MyDialog dialog)
+	{
+		Log.i(TAG, "NO clicked, value: " + dialog.getValue());
+	}
+
+	@Override
+	public void onNeutral(final MyDialog dialog)
+	{
+		Log.i(TAG, "NEUTRAL clicked");
+	}
+
+	public void showDialogList(View view)
+	{
+//		new MyListDialog().show(getSupportFragmentManager(), "DIALOG_LIST");
+		TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+			@Override
+			public void onTimeSet(final TimePicker view, final int hourOfDay, final int minute)
+			{
+				Log.i(TAG, "Time picked: " + hourOfDay + ":" + minute);
+			}
+		}, 0, 0, true);
+
+		timePickerDialog.show();
+	}
+
+	public void showDialogSingleChoice(View view)
+	{
+		new SingleChoiceDialog().show(getSupportFragmentManager(), "DIALOG_SINGLE");
+	}
+
+	public void showDialogMultiChoice(View view)
+	{
+		new MultiChoiceDialog().show(getSupportFragmentManager(), "DIALOG_MULTI");
+	}
+
+	public void showDialogCustom(View view)
+	{
+		new CustomDialog().show(getSupportFragmentManager(), "DIALOG_CUSTOM");
+	}
+
+	@Override
+	public void onYes(final String username, final String password)
+	{
+		Log.i(TAG, "User: " + username + ", Password: " + password);
 	}
 }
